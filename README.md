@@ -1,2 +1,147 @@
-# changeloggenie-prototype
-testare agent GitHub 
+# ChangelogGenie Prototype
+
+A minimal read-only prototype for generating categorized changelog drafts from public GitHub commits.
+
+## Overview
+
+ChangelogGenie reads commits from a given GitHub repository and date range, then outputs a structured Markdown changelog automatically categorized by commit type (features, bug fixes, performance improvements, etc.).
+
+## Usage
+
+### Basic Usage
+
+```bash
+python changelog_genie.py <owner> <repo> <start_date> <end_date>
+```
+
+### With Version Identifier
+
+```bash
+python changelog_genie.py --version <version> <owner> <repo> <start_date> <end_date>
+```
+
+## Arguments
+
+| Argument | Type | Description |
+|----------|------|-------------|
+| `owner` | string | GitHub repository owner (username or organization) |
+| `repo` | string | GitHub repository name |
+| `start_date` | string | Start date in `YYYY-MM-DD` format |
+| `end_date` | string | End date in `YYYY-MM-DD` format |
+| `--version` | string (optional) | Version identifier for the changelog header |
+
+## Example Output
+
+```markdown
+# Changelog - v19.0.0
+
+**Date Range:** 2026-05-13 to 2026-05-20
+**Repository:** [facebook/react](https://github.com/facebook/react)
+
+**Total Commits:** 42
+
+## Features
+
+- Add new hooks API ([a1b2c3d](https://github.com/facebook/react/commit/a1b2c3d)) - John Doe (2026-05-18)
+
+## Bug Fixes
+
+- Fix memory leak in reconciler ([b2c3d4e](https://github.com/facebook/react/commit/b2c3d4e)) - Jane Smith (2026-05-17)
+
+## Documentation
+
+- Update README with new API docs ([c3d4e5f](https://github.com/facebook/react/commit/c3d4e5f)) - Alex Johnson (2026-05-16)
+```
+
+## How It Works
+
+1. **Fetch**: Queries the GitHub API endpoint `/repos/{owner}/{repo}/commits` with `since` and `until` parameters
+2. **Parse**: Extracts commit messages and metadata (author, date, SHA)
+3. **Categorize**: Classifies each commit into one of these categories:
+   - **Features**: New functionality
+   - **Bug Fixes**: Resolves issues
+   - **Performance**: Optimizations
+   - **Documentation**: Doc updates
+   - **Breaking Changes**: API-incompatible changes
+   - **Dependencies**: Dependency updates
+   - **Refactoring**: Code restructuring
+   - **Other**: Unclassified commits
+4. **Generate**: Produces a formatted Markdown changelog with links to commit details
+
+## API Endpoint
+
+This prototype uses the public GitHub API:
+
+```
+GET /repos/{owner}/{repo}/commits
+```
+
+**Parameters:**
+- `since`: ISO 8601 date (start of range, inclusive)
+- `until`: ISO 8601 date (end of range, inclusive)
+
+**No authentication required** – works with public repositories only.
+
+## Limitations
+
+- **Public repositories only**: Cannot access private repository commits without authentication
+- **API rate limiting**: GitHub's public API allows 60 requests/hour unauthenticated
+- **Max commits**: Returns up to 250 commits per request (paginated)
+- **Pattern-based categorization**: Uses regex matching on commit messages; custom categories not supported in this prototype
+- **No filtering**: Returns all commits in date range
+
+## Not Included
+
+By design, this prototype does not include:
+
+- ❌ Authentication (GitHub tokens/PATs)
+- ❌ Database persistence
+- ❌ File writing operations
+- ❌ Deployment configuration
+- ❌ GitHub write actions
+- ❌ Web server or API
+- ❌ Configuration files
+- ❌ Interactive CLI UI
+
+## Development
+
+### Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running the Prototype
+
+```bash
+python changelog_genie.py facebook react 2026-05-01 2026-05-20
+```
+
+### Running with Version
+
+```bash
+python changelog_genie.py --version "Release v19.0" facebook react 2026-05-01 2026-05-20
+```
+
+### Example: Last 30 Days
+
+```bash
+python changelog_genie.py nodejs node 2026-04-20 2026-05-20
+```
+
+## Future Enhancements
+
+Potential improvements (not in this prototype):
+
+- Optional GitHub token support for private repositories
+- Database storage of changelog history
+- Custom category configuration
+- Output to file (Markdown, JSON, HTML)
+- Advanced filtering (author, labels, commit type)
+- Web UI for interactive changelog generation
+- Slack/email integration
+- Changelog comparison across versions
+
+## License
+
+MIT
