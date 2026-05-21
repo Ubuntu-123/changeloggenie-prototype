@@ -1,0 +1,31 @@
+{
+  "features": [
+    "Added a working ChangelogGenie prototype with API usage and validation for generating business-ready changelog entries.",
+    "Added an OpenAI-powered runner for creating customer-facing changelogs from repository changes."
+  ],
+  "improvements": [
+    "Improved changelog generation guidance to produce clearer, more customer-focused entries.",
+    "Added examples that show how AI-assisted business changelog generation works with real repository data.",
+    "Added usage guidance for running AI-assisted business changelog generation.",
+    "Simplified command-line output so generated changelogs are easier to read and use."
+  ],
+  "fixes": [],
+  "ignored": [
+    {
+      "input": "Add corrected README with proper formatting",
+      "reason": "Documentation formatting change with no clear product impact"
+    },
+    {
+      "input": "Add requirements.txt",
+      "reason": "Internal dependency/setup file with no explicit user impact"
+    },
+    {
+      "input": "Merge pull request #1 from Ubuntu-123/changeloggenie-prototype",
+      "reason": "Merge commit"
+    },
+    {
+      "input": "Initial commit",
+      "reason": "Repository setup with no specific user-facing change"
+    }
+  ]
+}

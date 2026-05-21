@@ -23,6 +23,8 @@ DEFAULT_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.5")
 
 
 def read_text(path: str) -> str:
+    if path == "-":
+        return sys.stdin.read()
     return Path(path).read_text(encoding="utf-8")
 
 
@@ -32,7 +34,7 @@ def main() -> int:
     )
     parser.add_argument(
         "input_file",
-        help="Path to a technical changelog Markdown file.",
+        help="Path to a technical changelog Markdown file, or '-' to read from stdin.",
     )
     parser.add_argument(
         "--prompt",
