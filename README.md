@@ -6,7 +6,7 @@ A minimal read-only prototype for generating categorized changelog drafts from p
 
 ChangelogGenie reads commits from a given GitHub repository and date range, then outputs a structured Markdown changelog automatically categorized by commit type (features, bug fixes, performance improvements, etc.).
 
-The prototype also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. At this stage, the AI layer is prompt-based and manual; no model API is integrated yet.
+The prototype also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. It can be tested manually with the prompt files or run through the included OpenAI API runner.
 
 ## Usage
 
@@ -41,6 +41,7 @@ The repository includes prompt and example files for converting technical change
 - `examples/business_changelog_expected.json` – expected JSON output for the synthetic test
 - `examples/real_repo_technical_changelog.md` – real technical changelog generated from this repository
 - `examples/real_repo_business_output.json` – AI-produced business changelog output for the real repository example
+- `examples/real_repo_business_output_api.json` – OpenAI API-produced business changelog output for the same real repository example
 
 The AI layer is designed to:
 
@@ -49,7 +50,30 @@ The AI layer is designed to:
 - return strictly valid JSON with `features`, `improvements`, `fixes`, and `ignored`
 - rewrite included changes as customer-facing changelog entries rather than lightly rephrased commit messages
 
-Future work may connect this prompt layer to an LLM API, but the current prototype keeps it separate and reviewable.
+The current API runner is intentionally minimal and local. It reads a technical changelog file and prints validated JSON output.
+
+### Running the AI API Runner
+
+Set your OpenAI API key as an environment variable. Do not commit API keys to the repository.
+
+```bash
+export OPENAI_API_KEY='your-api-key-here'
+```
+
+Then run:
+
+```bash
+python business_changelog_ai.py examples/real_repo_technical_changelog.md
+```
+
+To save the output:
+
+```bash
+python business_changelog_ai.py examples/real_repo_technical_changelog.md > examples/real_repo_business_output_api.json
+```
+
+The script validates that the model output is parseable JSON before printing the formatted result.
+
 
 ## Example Output
 
@@ -120,8 +144,8 @@ By design, this prototype does not include:
 - ❌ File writing operations
 - ❌ Deployment configuration
 - ❌ GitHub write actions
-- ❌ Web server or API
-- ❌ Integrated LLM/API execution for the AI layer
+- ❌ Web server or hosted API
+- ❌ Persistent storage for AI-generated changelogs
 - ❌ Configuration files
 - ❌ Interactive CLI UI
 
