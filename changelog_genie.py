@@ -6,8 +6,9 @@ Reads public GitHub commits for a given owner/repo and date range,
 then outputs a categorized changelog in Markdown format.
 """
 
-import requests
 import argparse
+import sys
+import requests
 from datetime import datetime
 from typing import List, Dict
 import re
@@ -122,7 +123,6 @@ class ChangelogGenie:
         Returns:
             Category name
         """
-        message_lower = message.lower()
         first_line = message.split("\n")[0]
 
         for category, patterns in ChangelogGenie.CATEGORIES.items():
@@ -297,9 +297,14 @@ def main():
 
     args = parser.parse_args()
 
+    if args.start_date > args.end_date:
+        print("Error: start_date must be earlier than or equal to end_date.", file=sys.stderr)
+        return
+
     print(
         f"Fetching commits from {args.owner}/{args.repo} "
-        f"({args.start_date} to {args.end_date})..."
+        f"({args.start_date} to {args.end_date})...",
+        file=sys.stderr,
     )
 
     commits = ChangelogGenie.fetch_commits(
@@ -307,14 +312,14 @@ def main():
     )
 
     if not commits:
-        print("No commits found.")
+        print("No commits found.", file=sys.stderr)
         changelog = ChangelogGenie.generate_markdown(
             commits, args.owner, args.repo, args.version
         )
         print(changelog)
         return
 
-    print(f"Found {len(commits)} commits. Generating changelog...")
+    print(f"Found {len(commits)} commits. Generating changelog...", file=sys.stderr)
     changelog = ChangelogGenie.generate_markdown(
         commits, args.owner, args.repo, args.version
     )
