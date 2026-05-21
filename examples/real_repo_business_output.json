@@ -1,0 +1,37 @@
+{
+  "features": [
+    "ChangelogGenie now uses the correct GitHub commits API and validates date inputs more reliably"
+  ],
+  "improvements": [],
+  "fixes": [],
+  "ignored": [
+    {
+      "input": "Add corrected README with proper formatting (f5eeaa9) - Ubuntu-123 (2026-05-20)",
+      "reason": "documentation update with no direct user-facing feature change"
+    },
+    {
+      "input": "Add requirements.txt (87fb2ea) - Ubuntu-123 (2026-05-20)",
+      "reason": "tooling/dependency file addition with no visible customer impact"
+    },
+    {
+      "input": "Strengthen customer-facing changelog prompt (0c6067b) - Ubuntu-123 (2026-05-21)",
+      "reason": "internal prompt quality improvement with unclear direct user impact"
+    },
+    {
+      "input": "Add business changelog AI prompt examples (0d7463e) - Ubuntu-123 (2026-05-21)",
+      "reason": "internal example content addition with no customer-facing change"
+    },
+    {
+      "input": "Clean up CLI output handling (336de51) - Ubuntu-123 (2026-05-21)",
+      "reason": "internal tooling cleanup with no explicit user-visible change"
+    },
+    {
+      "input": "Merge pull request #1 from Ubuntu-123/changeloggenie-prototype (e20d45f) - Ubuntu-123 (2026-05-20)",
+      "reason": "merge commit with no direct user-facing description"
+    },
+    {
+      "input": "Initial commit (d85de41) - Ubuntu-123 (2026-05-20)",
+      "reason": "initial repository setup with no specific user-facing change"
+    }
+  ]
+}
