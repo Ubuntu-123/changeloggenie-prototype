@@ -6,6 +6,8 @@ A minimal read-only prototype for generating categorized changelog drafts from p
 
 ChangelogGenie reads commits from a given GitHub repository and date range, then outputs a structured Markdown changelog automatically categorized by commit type (features, bug fixes, performance improvements, etc.).
 
+The prototype also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. At this stage, the AI layer is prompt-based and manual; no model API is integrated yet.
+
 ## Usage
 
 ### Basic Usage
@@ -29,6 +31,25 @@ python changelog_genie.py --version <version> <owner> <repo> <start_date> <end_d
 | `start_date` | string | Start date in `YYYY-MM-DD` format |
 | `end_date` | string | End date in `YYYY-MM-DD` format |
 | `--version` | string (optional) | Version identifier for the changelog header |
+
+## AI-Assisted Business Changelog Layer
+
+The repository includes prompt and example files for converting technical changelog content into customer-facing SaaS changelog entries:
+
+- `prompts/business_changelog_system.md` – system instructions for the AI transformation layer
+- `examples/business_changelog_input.txt` – synthetic test input
+- `examples/business_changelog_expected.json` – expected JSON output for the synthetic test
+- `examples/real_repo_technical_changelog.md` – real technical changelog generated from this repository
+- `examples/real_repo_business_output.json` – AI-produced business changelog output for the real repository example
+
+The AI layer is designed to:
+
+- ignore internal-only commits, merge commits, documentation cleanup, and tooling changes unless they have explicit user impact
+- avoid inventing features, metrics, or business value
+- return strictly valid JSON with `features`, `improvements`, `fixes`, and `ignored`
+- rewrite included changes as customer-facing changelog entries rather than lightly rephrased commit messages
+
+Future work may connect this prompt layer to an LLM API, but the current prototype keeps it separate and reviewable.
 
 ## Example Output
 
@@ -100,6 +121,7 @@ By design, this prototype does not include:
 - ❌ Deployment configuration
 - ❌ GitHub write actions
 - ❌ Web server or API
+- ❌ Integrated LLM/API execution for the AI layer
 - ❌ Configuration files
 - ❌ Interactive CLI UI
 
