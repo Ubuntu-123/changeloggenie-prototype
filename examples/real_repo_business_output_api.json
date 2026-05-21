@@ -1,0 +1,29 @@
+{
+  "features": [
+    "Added an initial changelog generation prototype that helps turn technical change history into customer-facing release notes."
+  ],
+  "improvements": [
+    "Improved the changelog generation guidance to produce clearer, more customer-focused release notes.",
+    "Added example prompts to make it easier to create business-friendly changelog content.",
+    "Cleaned up command-line output so generated results are easier to read and use."
+  ],
+  "fixes": [],
+  "ignored": [
+    {
+      "input": "Add corrected README with proper formatting",
+      "reason": "Documentation formatting change with no direct product impact."
+    },
+    {
+      "input": "Add requirements.txt",
+      "reason": "Project dependency setup with no explicit customer-facing impact."
+    },
+    {
+      "input": "Merge pull request #1 from Ubuntu-123/changeloggenie-prototype",
+      "reason": "Merge commit with no specific user-facing change."
+    },
+    {
+      "input": "Initial commit",
+      "reason": "Repository setup with no specific user-facing change."
+    }
+  ]
+}
