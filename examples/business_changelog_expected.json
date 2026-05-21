@@ -1,0 +1,25 @@
+{
+  "features": [
+    "Premium users can now manage subscriptions through Stripe checkout."
+  ],
+  "improvements": [
+    "Dashboard charts now load faster thanks to reduced API latency from 200ms to 40ms."
+  ],
+  "fixes": [
+    "Fixed a mobile dashboard spacing issue for a cleaner responsive layout."
+  ],
+  "ignored": [
+    {
+      "input": "chore: updated dockerfile to ubuntu 22.04",
+      "reason": "Infrastructure-only change with no explicit customer-facing impact."
+    },
+    {
+      "input": "docs: fixed spelling error in readme.md",
+      "reason": "Internal documentation typo fix."
+    },
+    {
+      "input": "refactor: cleaned up old database migration files",
+      "reason": "Internal refactoring with no clear user-facing impact."
+    }
+  ]
+}

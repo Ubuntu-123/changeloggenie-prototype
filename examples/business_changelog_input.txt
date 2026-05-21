@@ -1,0 +1,9 @@
+Context: Apply the ChangelogGenie business changelog system instructions to the following raw commits.
+
+Commits from the last 2 weeks:
+1. feat: added Stripe checkout subscription gateway for premium users
+2. fix: resolved boundary padding issue on mobile dashboard responsive view
+3. chore: updated dockerfile to ubuntu 22.04
+4. docs: fixed spelling error in readme.md
+5. refactor: cleaned up old database migration files
+6. perf: optimized redis cache queries reducing API latency from 200ms to 40ms for dashboard charts
