@@ -107,3 +107,18 @@ Expected result:
 - no database
 - no GitHub App installation flow
 - no automatic publishing of changelogs
+
+## No-key smoke test
+
+You can verify that the AI runner fails safely without an API key.
+
+Command:
+
+unset OPENAI_API_KEY
+python business_changelog_ai.py examples/real_repo_technical_changelog.md
+echo $?
+
+Expected result:
+
+- ERROR: OPENAI_API_KEY is not set.
+- exit code 2

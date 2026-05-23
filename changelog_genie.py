@@ -8,7 +8,6 @@ then outputs a categorized changelog in Markdown format.
 
 import argparse
 import sys
-import requests
 from datetime import datetime
 from typing import List, Dict
 import re
@@ -23,8 +22,13 @@ class ChangelogGenie:
             r"^feat:",
             r"^feature:",
             r"add.*support",
+            r"add.*runner",
+            r"add.*api",
+            r"add.*generator",
             r"implement",
             r"new.*feature",
+            r"support.*input",
+            r"support.*pipeline",
         ],
         "Bug Fixes": [
             r"^fix:",
@@ -38,6 +42,7 @@ class ChangelogGenie:
             r"optimize",
             r"performance",
             r"speed.*up",
+            r"clean.*cli.*output",
         ],
         "Documentation": [
             r"^docs:",
@@ -84,6 +89,8 @@ class ChangelogGenie:
         commits = []
         page = 1
         per_page = 100
+
+        import requests
 
         while True:
             try:
@@ -299,7 +306,7 @@ def main():
 
     if args.start_date > args.end_date:
         print("Error: start_date must be earlier than or equal to end_date.", file=sys.stderr)
-        return
+        sys.exit(1)
 
     print(
         f"Fetching commits from {args.owner}/{args.repo} "
