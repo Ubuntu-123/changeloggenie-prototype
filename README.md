@@ -15,6 +15,7 @@ The prototype also includes an experimental AI-assisted business changelog layer
 - [Support](SUPPORT.md)
 - [Privacy notes](docs/privacy.md)
 - [Roadmap](docs/roadmap.md)
+- [GitHub Action usage](docs/github-action.md)
 
 ## Usage
 

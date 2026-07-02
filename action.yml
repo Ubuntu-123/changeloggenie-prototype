@@ -1,0 +1,87 @@
+name: ChangelogGenie
+description: Generate a technical changelog from GitHub commits for a repository and date range.
+
+branding:
+  icon: file-text
+  color: purple
+
+inputs:
+  owner:
+    description: GitHub repository owner. If empty, the current workflow repository owner is used.
+    required: false
+    default: ""
+  repo:
+    description: GitHub repository name. If empty, the current workflow repository name is used.
+    required: false
+    default: ""
+  start_date:
+    description: Start date in YYYY-MM-DD format.
+    required: true
+  end_date:
+    description: End date in YYYY-MM-DD format.
+    required: true
+  version:
+    description: Optional version label for the changelog heading.
+    required: false
+    default: ""
+  output_path:
+    description: Path where the generated Markdown changelog will be written.
+    required: false
+    default: changelog.md
+  github_token:
+    description: Optional GitHub token used to reduce API rate-limit issues.
+    required: false
+    default: ""
+
+outputs:
+  changelog_path:
+    description: Path to the generated changelog file.
+    value: ${{ inputs.output_path }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install ChangelogGenie
+      shell: bash
+      run: python -m pip install -e "$GITHUB_ACTION_PATH"
+
+    - name: Generate changelog
+      shell: bash
+      env:
+        INPUT_OWNER: ${{ inputs.owner }}
+        INPUT_REPO: ${{ inputs.repo }}
+        INPUT_START_DATE: ${{ inputs.start_date }}
+        INPUT_END_DATE: ${{ inputs.end_date }}
+        INPUT_VERSION: ${{ inputs.version }}
+        INPUT_OUTPUT_PATH: ${{ inputs.output_path }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      run: |
+        set -euo pipefail
+
+        OWNER="$INPUT_OWNER"
+        REPO="$INPUT_REPO"
+
+        if [ -z "$OWNER" ]; then
+          OWNER="$GITHUB_REPOSITORY_OWNER"
+        fi
+
+        if [ -z "$REPO" ]; then
+          REPO="${GITHUB_REPOSITORY#*/}"
+        fi
+
+        mkdir -p "$(dirname "$INPUT_OUTPUT_PATH")"
+
+        ARGS=("$OWNER" "$REPO" "$INPUT_START_DATE" "$INPUT_END_DATE")
+
+        if [ -n "$INPUT_VERSION" ]; then
+          ARGS+=("--version" "$INPUT_VERSION")
+        fi
+
+        changeloggenie "${ARGS[@]}" > "$INPUT_OUTPUT_PATH"
+
+        echo "Generated changelog at $INPUT_OUTPUT_PATH"

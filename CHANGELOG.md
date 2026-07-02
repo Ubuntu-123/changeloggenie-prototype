@@ -8,6 +8,8 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ### Added
 
+- Added composite GitHub Action for generating technical changelog Markdown.
+- Added GitHub Action usage documentation.
 - Added optional `GITHUB_TOKEN` support for GitHub API requests.
 - Added GitHub API version header for commit fetching.
 - Moved GitHub fetch errors to stderr so redirected Markdown output stays clean.
