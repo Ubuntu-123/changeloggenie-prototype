@@ -39,3 +39,35 @@ The Action did not call OpenAI.
 The Action did not commit files back to the repository.
 
 The Action did not open a pull request.
+
+## External repository validation
+
+Date: 2026-07-02
+
+External repository: Ubuntu-123/changeloggenie-action-demo
+
+Workflow: ChangelogGenie Demo
+
+Workflow file: .github/workflows/changeloggenie-demo.yml
+
+Action version tested: Ubuntu-123/changeloggenie-prototype@v0.1.5
+
+Run type: manual workflow_dispatch
+
+Result: success
+
+Observed duration: 24 seconds
+
+Artifact: changelog-demo-output
+
+## External validation verified behavior
+
+A separate public repository successfully consumed the ChangelogGenie Action from the v0.1.5 release.
+
+The generated changelog included the expected heading, date range, repository link, total commit count, and categorized commit sections.
+
+The generated changelog was uploaded as a workflow artifact.
+
+This confirms that the Action can be used by another repository through:
+
+    uses: Ubuntu-123/changeloggenie-prototype@v0.1.5
