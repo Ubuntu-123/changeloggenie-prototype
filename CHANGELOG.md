@@ -8,6 +8,9 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ### Added
 
+- Added optional `GITHUB_TOKEN` support for GitHub API requests.
+- Added GitHub API version header for commit fetching.
+- Moved GitHub fetch errors to stderr so redirected Markdown output stays clean.
 - Added Python package metadata with `pyproject.toml`.
 - Added editable local installation support.
 - Added console commands: `changeloggenie` and `changeloggenie-ai`.

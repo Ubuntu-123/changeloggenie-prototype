@@ -90,7 +90,10 @@ class ChangelogGenie:
         page = 1
         per_page = 100
 
+        import os
         import requests
+
+        github_token = os.getenv("GITHUB_TOKEN")
 
         while True:
             try:
@@ -101,7 +104,13 @@ class ChangelogGenie:
                     "per_page": per_page,
                     "page": page,
                 }
-                headers = {"Accept": "application/vnd.github.v3+json"}
+                headers = {
+                    "Accept": "application/vnd.github.v3+json",
+                    "X-GitHub-Api-Version": "2022-11-28",
+                }
+
+                if github_token:
+                    headers["Authorization"] = f"Bearer {github_token}"
 
                 response = requests.get(url, params=params, headers=headers, timeout=10)
                 response.raise_for_status()
@@ -114,7 +123,7 @@ class ChangelogGenie:
                 page += 1
 
             except requests.exceptions.RequestException as e:
-                print(f"Error fetching commits: {e}")
+                print(f"Error fetching commits: {e}", file=sys.stderr)
                 break
 
         return commits

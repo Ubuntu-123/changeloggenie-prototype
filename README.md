@@ -145,6 +145,16 @@ GET /repos/{owner}/{repo}/commits
 
 **No authentication required** – works with public repositories only.
 
+### Optional GitHub token
+
+For public repositories, ChangelogGenie can run without a GitHub token.
+
+To reduce GitHub API rate-limit issues, set `GITHUB_TOKEN` before running the CLI:
+
+    export GITHUB_TOKEN='your-github-token-here'
+
+When `GITHUB_TOKEN` is set, ChangelogGenie sends it only as an Authorization header to the GitHub API.
+
 ## Limitations
 
 - **Public repositories only**: Cannot access private repository commits without authentication
