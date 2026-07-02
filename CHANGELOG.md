@@ -8,6 +8,8 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ### Added
 
+- Added manual GitHub Action validation notes.
+- Added manual workflow for validating the ChangelogGenie Action in GitHub Actions.
 - Added composite GitHub Action for generating technical changelog Markdown.
 - Added GitHub Action usage documentation.
 - Added optional `GITHUB_TOKEN` support for GitHub API requests.
