@@ -40,6 +40,16 @@ python changelog_genie.py --version <version> <owner> <repo> <start_date> <end_d
 | `end_date` | string | End date in `YYYY-MM-DD` format |
 | `--version` | string (optional) | Version identifier for the changelog header |
 
+### Installed CLI usage
+
+After installing the project with `python -m pip install -e .`, you can run:
+
+    changeloggenie <owner> <repo> <start_date> <end_date>
+
+For the optional AI-assisted layer:
+
+    changeloggenie-ai examples/real_repo_technical_changelog.md
+
 ## AI-Assisted Business Changelog Layer
 
 The repository includes prompt and example files for converting technical changelog content into customer-facing SaaS changelog entries:

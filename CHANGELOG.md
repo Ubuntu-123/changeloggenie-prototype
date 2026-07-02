@@ -8,6 +8,10 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ### Added
 
+- Added Python package metadata with `pyproject.toml`.
+- Added editable local installation support.
+- Added console commands: `changeloggenie` and `changeloggenie-ai`.
+- Added `.gitignore` for Python cache, build, and environment files.
 - Added MIT license file.
 - Added support guide for issues, feedback, and sensitive reports.
 - Added privacy notes covering public GitHub API usage, optional OpenAI API usage, and bring-your-own-key operation.
