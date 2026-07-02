@@ -8,23 +8,62 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ### Added
 
-- Clarified README positioning for CLI, GitHub Action, and optional local AI-assisted usage.
-- Documented successful external repository validation for the GitHub Action.
-- Added manual GitHub Action validation notes.
 - Added manual workflow for validating the ChangelogGenie Action in GitHub Actions.
-- Added composite GitHub Action for generating technical changelog Markdown.
+- Added manual GitHub Action validation notes.
+- Documented successful external repository validation for the GitHub Action.
+
+### Changed
+
+- Clarified README positioning for CLI, GitHub Action, and optional local AI-assisted usage.
+
+## v0.1.5 - 2026-07-02
+
+### Added
+
+- Added composite GitHub Action for generating technical Markdown changelogs.
+- Added `action.yml` with configurable repository, date range, version label, output path, and optional GitHub token.
 - Added GitHub Action usage documentation.
+- Added README link to GitHub Action documentation.
+- Added package version bump to `0.1.5`.
+
+### Notes
+
+- The Action generates a technical changelog only.
+- The Action does not call OpenAI.
+- The Action does not commit files, open pull requests, or write to repositories.
+- The generated changelog can be uploaded as a workflow artifact.
+
+## v0.1.4 - 2026-07-02
+
+### Added
+
 - Added optional `GITHUB_TOKEN` support for GitHub API requests.
 - Added GitHub API version header for commit fetching.
+- Added README documentation for using `GITHUB_TOKEN`.
+
+### Changed
+
 - Moved GitHub fetch errors to stderr so redirected Markdown output stays clean.
+
+## v0.1.3 - 2026-07-02
+
+### Added
+
 - Added Python package metadata with `pyproject.toml`.
 - Added editable local installation support.
 - Added console commands: `changeloggenie` and `changeloggenie-ai`.
 - Added `.gitignore` for Python cache, build, and environment files.
+
+## v0.1.2 - 2026-07-02
+
+### Added
+
 - Added MIT license file.
+- Added reviewed project changelog.
 - Added support guide for issues, feedback, and sensitive reports.
 - Added privacy notes covering public GitHub API usage, optional OpenAI API usage, and bring-your-own-key operation.
 - Added project roadmap documentation.
+- Added README links to project documentation.
 
 ## v0.1.1 - 2026-05-23
 
