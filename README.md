@@ -8,6 +8,14 @@ ChangelogGenie reads commits from a given GitHub repository and date range, then
 
 The prototype also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. It can be tested manually with the prompt files or run through the included OpenAI API runner.
 
+## Project Documentation
+
+- [Changelog](CHANGELOG.md)
+- [Testing guide](TESTING.md)
+- [Support](SUPPORT.md)
+- [Privacy notes](docs/privacy.md)
+- [Roadmap](docs/roadmap.md)
+
 ## Usage
 
 ### Basic Usage
