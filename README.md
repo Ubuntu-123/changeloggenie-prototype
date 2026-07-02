@@ -8,6 +8,29 @@ ChangelogGenie reads commits from a given GitHub repository and date range, then
 
 The prototype also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. It can be tested manually with the prompt files or run through the included OpenAI API runner.
 
+## Current Product Shape
+
+ChangelogGenie currently has three usable layers:
+
+- local CLI for generating technical Markdown changelogs from public GitHub commits
+- GitHub Action for generating technical Markdown changelogs in repository workflows
+- optional local AI-assisted runner for transforming technical changelogs into customer-facing JSON, using the user's own OpenAI API key
+
+The GitHub Action does not call OpenAI, does not commit files, and does not open pull requests. It generates a Markdown artifact only.
+
+## Quick Start: GitHub Action
+
+Use the released Action from another repository:
+
+    uses: Ubuntu-123/changeloggenie-prototype@v0.1.5
+
+The Action accepts a date range, optional version label, output path, and optional `github_token`.
+
+Full workflow example:
+
+- [GitHub Action usage](docs/github-action.md)
+- [GitHub Action validation](docs/action-validation.md)
+
 ## Project Documentation
 
 - [Changelog](CHANGELOG.md)

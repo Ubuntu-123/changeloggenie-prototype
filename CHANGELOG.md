@@ -8,6 +8,7 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ### Added
 
+- Clarified README positioning for CLI, GitHub Action, and optional local AI-assisted usage.
 - Documented successful external repository validation for the GitHub Action.
 - Added manual GitHub Action validation notes.
 - Added manual workflow for validating the ChangelogGenie Action in GitHub Actions.
