@@ -3,6 +3,14 @@ name: Test ChangelogGenie Action
 on:
   workflow_dispatch:
     inputs:
+      owner:
+        description: GitHub repository owner
+        required: false
+        default: "Ubuntu-123"
+      repo:
+        description: GitHub repository name
+        required: false
+        default: "changeloggenie-prototype"
       start_date:
         description: Start date in YYYY-MM-DD format
         required: true
@@ -27,6 +35,8 @@ jobs:
       - name: Generate changelog with ChangelogGenie
         uses: Ubuntu-123/changeloggenie-prototype@v0.1.5
         with:
+          owner: ${{ inputs.owner }}
+          repo: ${{ inputs.repo }}
           start_date: ${{ inputs.start_date }}
           end_date: ${{ inputs.end_date }}
           version: ${{ inputs.version }}
