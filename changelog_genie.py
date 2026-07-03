@@ -214,7 +214,12 @@ class ChangelogGenie:
 
     @staticmethod
     def generate_markdown(
-        commits: List[Dict], owner: str, repo: str, version: str = None
+        commits: List[Dict],
+        owner: str,
+        repo: str,
+        start_date: str,
+        end_date: str,
+        version: str = None,
     ) -> str:
         """
         Generate a Markdown changelog from categorized commits.
@@ -223,24 +228,29 @@ class ChangelogGenie:
             commits: List of commit dictionaries
             owner: Repository owner
             repo: Repository name
+            start_date: Requested start date in YYYY-MM-DD format
+            end_date: Requested end date in YYYY-MM-DD format
             version: Version identifier (optional)
 
         Returns:
             Markdown-formatted changelog
         """
-        if not commits:
-            return "# Changelog\n\nNo commits found for the specified date range.\n"
-
-        categorized = ChangelogGenie.group_commits_by_category(commits)
-
-        # Generate header
-        date_range = f"{ChangelogGenie._get_commit_date(commits[-1])} to {ChangelogGenie._get_commit_date(commits[0])}"
         if version:
             header = f"# Changelog - {version}\n\n"
         else:
             header = f"# Changelog\n\n"
 
-        header += f"**Date Range:** {date_range}\n"
+        header += f"**Requested Date Range:** {start_date} to {end_date}\n"
+
+        if not commits:
+            header += "\nNo commits found for the specified date range.\n"
+            return header
+
+        categorized = ChangelogGenie.group_commits_by_category(commits)
+
+        # Generate header
+        commit_date_range = f"{ChangelogGenie._get_commit_date(commits[-1])} to {ChangelogGenie._get_commit_date(commits[0])}"
+        header += f"**Commit Date Range:** {commit_date_range}\n"
         header += f"**Repository:** [{owner}/{repo}](https://github.com/{owner}/{repo})\n\n"
         header += f"**Total Commits:** {len(commits)}\n\n"
 
@@ -330,14 +340,14 @@ def main():
     if not commits:
         print("No commits found.", file=sys.stderr)
         changelog = ChangelogGenie.generate_markdown(
-            commits, args.owner, args.repo, args.version
+            commits, args.owner, args.repo, args.start_date, args.end_date, args.version
         )
         print(changelog)
         return
 
     print(f"Found {len(commits)} commits. Generating changelog...", file=sys.stderr)
     changelog = ChangelogGenie.generate_markdown(
-        commits, args.owner, args.repo, args.version
+        commits, args.owner, args.repo, args.start_date, args.end_date, args.version
     )
 
     print(changelog)
