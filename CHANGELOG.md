@@ -6,15 +6,24 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ## Unreleased
 
+## v0.1.6 - 2026-07-03
+
 ### Added
 
-- Added manual workflow for validating the ChangelogGenie Action in GitHub Actions.
+- Added a GitHub Action status badge to the README.
+- Added manual workflow inputs for validating the ChangelogGenie Action against external public repositories.
 - Added manual GitHub Action validation notes.
 - Documented successful external repository validation for the GitHub Action.
+- Added a fuller GitHub Action Quick Start workflow example to the README.
 
 ### Changed
 
 - Clarified README positioning for CLI, GitHub Action, and optional local AI-assisted usage.
+- Updated current GitHub Action usage examples to `Ubuntu-123/changeloggenie-prototype@v0.1.6`.
+
+### Fixed
+
+- Clarified changelog date headers by separating the requested date range from the actual commit date range.
 
 ## v0.1.5 - 2026-07-02
 

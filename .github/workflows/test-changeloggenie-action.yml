@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Generate changelog with ChangelogGenie
-        uses: Ubuntu-123/changeloggenie-prototype@v0.1.5
+        uses: Ubuntu-123/changeloggenie-prototype@v0.1.6
         with:
           owner: ${{ inputs.owner }}
           repo: ${{ inputs.repo }}
