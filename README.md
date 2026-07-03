@@ -1,6 +1,6 @@
 # ChangelogGenie Prototype
 
-A minimal read-only prototype for generating categorized changelog drafts from public GitHub commits.
+A lightweight read-only CLI and GitHub Action for generating categorized technical Markdown changelog drafts from GitHub commits.
 
 ## Overview
 
@@ -22,11 +22,31 @@ The GitHub Action does not call OpenAI, does not commit files, and does not open
 
 Use the released Action from another repository:
 
-    uses: Ubuntu-123/changeloggenie-prototype@v0.1.5
+```yaml
+name: Generate changelog
 
-The Action accepts a date range, optional version label, output path, and optional `github_token`.
+on:
+  workflow_dispatch:
 
-Full workflow example:
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate changelog
+        uses: Ubuntu-123/changeloggenie-prototype@v0.1.5
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          start_date: "2026-01-01"
+          end_date: "2026-12-31"
+          version: "draft"
+          output_path: "changelog-output.md"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+The Action accepts a date range, optional version label, output path, and optional `github_token`. It generates a Markdown file inside the workflow run only.
+
+More details:
 
 - [GitHub Action usage](docs/github-action.md)
 - [GitHub Action validation](docs/action-validation.md)
@@ -192,7 +212,7 @@ When `GITHUB_TOKEN` is set, ChangelogGenie sends it only as an Authorization hea
 
 By design, this prototype does not include:
 
-- ❌ Authentication (GitHub tokens/PATs)
+- ❌ Required login flow or hosted account system
 - ❌ Database persistence
 - ❌ File writing operations
 - ❌ Deployment configuration
