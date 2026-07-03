@@ -1,5 +1,7 @@
 # ChangelogGenie Prototype
 
+[![Test ChangelogGenie Action](https://github.com/Ubuntu-123/changeloggenie-prototype/actions/workflows/test-changeloggenie-action.yml/badge.svg)](https://github.com/Ubuntu-123/changeloggenie-prototype/actions/workflows/test-changeloggenie-action.yml)
+
 A lightweight read-only CLI and GitHub Action for generating categorized technical Markdown changelog drafts from GitHub commits.
 
 ## Overview
