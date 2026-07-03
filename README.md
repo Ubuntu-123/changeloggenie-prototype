@@ -145,7 +145,8 @@ The script validates that the model output is parseable JSON before printing the
 ```markdown
 # Changelog - v19.0.0
 
-**Date Range:** 2026-05-13 to 2026-05-20
+**Requested Date Range:** 2026-05-01 to 2026-05-20
+**Commit Date Range:** 2026-05-13 to 2026-05-20
 **Repository:** [facebook/react](https://github.com/facebook/react)
 
 **Total Commits:** 42
