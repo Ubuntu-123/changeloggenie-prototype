@@ -37,7 +37,7 @@ Use this workflow:
 
         steps:
           - name: Generate changelog
-            uses: Ubuntu-123/changeloggenie-prototype@v0.1.6
+            uses: Ubuntu-123/changeloggenie-prototype@v0.1.7
             with:
               start_date: ${{ inputs.start_date }}
               end_date: ${{ inputs.end_date }}

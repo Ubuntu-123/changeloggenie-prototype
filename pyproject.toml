@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "changeloggenie-prototype"
-version = "0.1.6"
+version = "0.1.7"
 description = "Lightweight read-only CLI and GitHub Action for generating categorized technical Markdown changelogs from GitHub commits."
 readme = "README.md"
 requires-python = ">=3.10"

@@ -6,6 +6,8 @@ ChangelogGenie is a public read-only CLI and GitHub Action for generating techni
 
 ## Unreleased
 
+## v0.1.7 - 2026-07-09
+
 ### Changed
 
 - Documented successful main branch GitHub Action validation for categorization updates.
@@ -21,7 +23,6 @@ ChangelogGenie is a public read-only CLI and GitHub Action for generating techni
 - Updated public documentation wording to remove outdated prototype framing.
 - Updated the roadmap to reflect the current public CLI and GitHub Action state.
 - Documented the current monetization position for the public MIT Action.
-
 ## v0.1.6 - 2026-07-03
 
 ### Added
