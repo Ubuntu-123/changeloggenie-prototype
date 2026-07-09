@@ -22,7 +22,7 @@ on:
       version:
         description: Optional changelog version label
         required: false
-        default: "main-action-validation"
+        default: "v0.1.7-action-validation"
   push:
     branches:
       - main
@@ -43,13 +43,13 @@ jobs:
 
     steps:
       - name: Generate changelog with ChangelogGenie
-        uses: Ubuntu-123/changeloggenie-prototype@main
+        uses: Ubuntu-123/changeloggenie-prototype@v0.1.7
         with:
           owner: ${{ github.event.inputs.owner || 'Ubuntu-123' }}
           repo: ${{ github.event.inputs.repo || 'changeloggenie-prototype' }}
           start_date: ${{ github.event.inputs.start_date || '2026-07-02' }}
           end_date: ${{ github.event.inputs.end_date || '2026-07-09' }}
-          version: ${{ github.event.inputs.version || 'main-categorization-validation' }}
+          version: ${{ github.event.inputs.version || 'v0.1.7-action-validation' }}
           output_path: changelog-action-output.md
           github_token: ${{ github.token }}
 

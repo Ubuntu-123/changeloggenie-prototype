@@ -6,6 +6,10 @@ ChangelogGenie is a public read-only CLI and GitHub Action for generating techni
 
 ## Unreleased
 
+### Changed
+
+- Prepared post-release workflow validation for the published v0.1.7 Action.
+
 ## v0.1.7 - 2026-07-09
 
 ### Changed
