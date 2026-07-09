@@ -8,6 +8,7 @@ ChangelogGenie is a public read-only CLI and GitHub Action for generating techni
 
 ### Changed
 
+- Refined commit categorization patterns after post-implementation audit.
 - Expanded commit categorization to reduce valid commits falling into `Other`.
 - Removed remaining outdated prototype wording from current README sections.
 - Updated support, privacy, testing, and roadmap wording to match the current public Action state.
