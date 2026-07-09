@@ -8,6 +8,7 @@ ChangelogGenie is a public read-only CLI and GitHub Action for generating techni
 
 ### Changed
 
+- Removed remaining outdated prototype wording from current README sections.
 - Updated support, privacy, testing, and roadmap wording to match the current public Action state.
 - Updated public documentation wording to remove outdated prototype framing.
 - Updated the roadmap to reflect the current public CLI and GitHub Action state.

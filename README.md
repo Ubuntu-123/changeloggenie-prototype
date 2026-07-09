@@ -181,7 +181,7 @@ The script validates that the model output is parseable JSON before printing the
 
 ## API Endpoint
 
-This prototype uses the public GitHub API:
+ChangelogGenie uses the public GitHub API:
 
 ```
 GET /repos/{owner}/{repo}/commits
@@ -208,12 +208,12 @@ When `GITHUB_TOKEN` is set, ChangelogGenie sends it only as an Authorization hea
 - **Public repositories only**: Cannot access private repository commits without authentication
 - **API rate limiting**: GitHub's public API allows 60 requests/hour unauthenticated
 - **Max commits**: Returns up to 250 commits per request (paginated)
-- **Pattern-based categorization**: Uses regex matching on commit messages; custom categories not supported in this prototype
+- **Pattern-based categorization**: Uses regex matching on commit messages; custom categories are not currently supported
 - **No filtering**: Returns all commits in date range
 
 ## Not Included
 
-By design, this prototype does not include:
+By design, ChangelogGenie does not include:
 
 - ❌ Required login flow or hosted account system
 - ❌ Database persistence
@@ -233,7 +233,7 @@ By design, this prototype does not include:
 pip install -r requirements.txt
 ```
 
-### Running the Prototype
+### Running the CLI
 
 ```bash
 python changelog_genie.py facebook react 2026-05-01 2026-05-20
@@ -253,7 +253,7 @@ python changelog_genie.py nodejs node 2026-04-20 2026-05-20
 
 ## Future Enhancements
 
-Potential improvements (not in this prototype):
+Potential improvements not currently included:
 
 - Optional GitHub token support for private repositories
 - Database storage of changelog history
