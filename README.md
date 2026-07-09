@@ -171,11 +171,15 @@ The script validates that the model output is parseable JSON before printing the
 3. **Categorize**: Classifies each commit into one of these categories:
    - **Features**: New functionality
    - **Bug Fixes**: Resolves issues
+   - **Improvements**: Clarifications and non-breaking enhancements
    - **Performance**: Optimizations
    - **Documentation**: Doc updates
-   - **Breaking Changes**: API-incompatible changes
+   - **CI/CD**: Workflow, automation, and pre-commit updates
+   - **Release Management**: Versioning and publishing work
    - **Dependencies**: Dependency updates
    - **Refactoring**: Code restructuring
+   - **Maintenance**: Metadata, cleanup, and type-checking work
+   - **Breaking Changes**: API-incompatible changes
    - **Other**: Unclassified commits
 4. **Generate**: Produces a formatted Markdown changelog with links to commit details
 
