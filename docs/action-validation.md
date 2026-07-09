@@ -165,3 +165,49 @@ The Action did not commit files back to the repository.
 The Action did not open a pull request.
 
 Note: run 29018711052 from the same validation sequence is not used as validation evidence because GitHub Actions did not acquire a hosted runner for that job.
+
+## Published Action validation - v0.1.7
+
+Date: 2026-07-09
+
+Workflow: Test ChangelogGenie Action
+
+Workflow file: .github/workflows/test-changeloggenie-action.yml
+
+Trigger: push on main
+
+Run ID: 29037407582
+
+Validation commit: b32a4e23a0582c3a978f8890beb817a175f9634b
+
+Published Action reference tested: Ubuntu-123/changeloggenie-prototype@v0.1.7
+
+Published Action resolved SHA: 139aecbae3c692b59b252748cce86a099144dfbf
+
+Repository tested: Ubuntu-123/changeloggenie-prototype
+
+Version label: v0.1.7-action-validation
+
+Output path: changelog-action-output.md
+
+Result: success
+
+## v0.1.7 validation verified behavior
+
+The workflow successfully consumed the published Action reference Ubuntu-123/changeloggenie-prototype@v0.1.7.
+
+GitHub Actions resolved the published Action tag to commit 139aecbae3c692b59b252748cce86a099144dfbf, which is the v0.1.7 release-prep commit.
+
+The workflow ran with read-only repository permissions: Contents read and Metadata read.
+
+The Action generated the changelog output file at changelog-action-output.md.
+
+The validation used the version label v0.1.7-action-validation.
+
+The Action did not require repository write permissions.
+
+The Action did not commit files back to the repository.
+
+The Action did not open a pull request.
+
+The Action did not call OpenAI.
