@@ -6,7 +6,7 @@ The current public Action is intentionally safe by default: it does not call Ope
 
 ## Current version
 
-The current prototype supports:
+The current version supports:
 
 - technical changelog generation from public GitHub commits
 - date-range based changelog generation

@@ -1,6 +1,6 @@
 # Support
 
-ChangelogGenie is currently an early prototype.
+ChangelogGenie is currently a public read-only CLI and GitHub Action.
 
 ## Questions and feedback
 
@@ -10,7 +10,7 @@ Use GitHub Issues for:
 - setup problems
 - confusing documentation
 - feedback on generated changelog output
-- suggestions for future GitHub Action or GitHub App support
+- suggestions for future GitHub Action improvements or GitHub App support
 
 ## Security or privacy concerns
 
@@ -20,4 +20,4 @@ If you need to report a sensitive concern, open a minimal public issue asking fo
 
 ## Current support status
 
-This repository is maintained as an early experimental project. Response times are not guaranteed.
+This repository is maintained as an experimental developer tool. Response times are not guaranteed.

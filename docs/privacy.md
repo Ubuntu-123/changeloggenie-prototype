@@ -31,4 +31,4 @@ OPENAI_API_KEY='your-api-key-here'
 
 ## Current project status
 
-ChangelogGenie is a local CLI prototype. It does not currently provide a hosted service, database, account system, or persistent changelog storage.
+ChangelogGenie is currently a public read-only CLI and GitHub Action. It does not currently provide a hosted service, database, account system, or persistent changelog storage.

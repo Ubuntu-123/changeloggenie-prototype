@@ -1,15 +1,15 @@
 # Testing ChangelogGenie
 
-This guide explains how to test the current ChangelogGenie prototype locally.
+This guide explains how to test the current ChangelogGenie local CLI and optional AI-assisted runner.
 
-## What this prototype does
+## What this guide covers
 
 ChangelogGenie has two testable layers:
 
 1. Technical changelog generation from public GitHub commits.
 2. AI-assisted transformation of the technical changelog into customer-facing JSON.
 
-The project is currently a local CLI prototype. It is not a hosted web app and it is not a GitHub Marketplace app.
+The local CLI and AI-assisted runner can be tested without a hosted account system. The GitHub Action is documented separately in `docs/github-action.md`.
 
 ## Requirements
 
@@ -102,7 +102,7 @@ Expected result:
 ## Current limitations
 
 - public repositories only for the technical changelog generator
-- local CLI only
+- local CLI and GitHub Action only
 - no hosted API
 - no database
 - no GitHub App installation flow
