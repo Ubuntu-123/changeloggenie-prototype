@@ -49,6 +49,7 @@ class ChangelogGenie:
             r"improvement",
             r"expand.*categorization",
             r"expand.*patterns",
+            r"refine.*categorization",
             r"enhance",
             r"align .*state",
         ],
