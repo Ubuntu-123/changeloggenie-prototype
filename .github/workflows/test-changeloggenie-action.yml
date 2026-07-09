@@ -22,7 +22,7 @@ on:
       version:
         description: Optional changelog version label
         required: false
-        default: "action-test"
+        default: "main-action-validation"
 
 permissions:
   contents: read
@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Generate changelog with ChangelogGenie
-        uses: Ubuntu-123/changeloggenie-prototype@v0.1.6
+        uses: Ubuntu-123/changeloggenie-prototype@main
         with:
           owner: ${{ inputs.owner }}
           repo: ${{ inputs.repo }}
