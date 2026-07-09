@@ -6,6 +6,11 @@ ChangelogGenie is currently an early prototype. This changelog is based on gener
 
 ## Unreleased
 
+### Changed
+
+- Updated the roadmap to reflect the current public CLI and GitHub Action state.
+- Documented the current monetization position for the public MIT Action.
+
 ## v0.1.6 - 2026-07-03
 
 ### Added
