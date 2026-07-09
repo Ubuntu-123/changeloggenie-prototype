@@ -2,12 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-ChangelogGenie is currently an early prototype. This changelog is based on generated commit output and manually reviewed before publication.
+ChangelogGenie is a public read-only CLI and GitHub Action for generating technical Markdown changelog drafts from GitHub commits. This changelog is based on generated commit output and manually reviewed before publication.
 
 ## Unreleased
 
 ### Changed
 
+- Updated public documentation wording to remove outdated prototype framing.
 - Updated the roadmap to reflect the current public CLI and GitHub Action state.
 - Documented the current monetization position for the public MIT Action.
 

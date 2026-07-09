@@ -1,4 +1,4 @@
-# ChangelogGenie Prototype
+# ChangelogGenie
 
 [![Test ChangelogGenie Action](https://github.com/Ubuntu-123/changeloggenie-prototype/actions/workflows/test-changeloggenie-action.yml/badge.svg)](https://github.com/Ubuntu-123/changeloggenie-prototype/actions/workflows/test-changeloggenie-action.yml)
 
