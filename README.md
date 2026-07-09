@@ -8,7 +8,7 @@ A lightweight read-only CLI and GitHub Action for generating categorized technic
 
 ChangelogGenie reads commits from a given GitHub repository and date range, then outputs a structured Markdown changelog automatically categorized by commit type (features, bug fixes, performance improvements, etc.).
 
-The prototype also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. It can be tested manually with the prompt files or run through the included OpenAI API runner.
+ChangelogGenie also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. It can be tested manually with the prompt files or run through the included OpenAI API runner.
 
 ## Current Product Shape
 
