@@ -117,3 +117,51 @@ The Action did not call OpenAI.
 The Action did not commit files back to any repository.
 
 The Action did not open a pull request.
+
+## Main branch Action validation - categorization update
+
+Date: 2026-07-09
+
+Workflow: Test ChangelogGenie Action
+
+Workflow file: .github/workflows/test-changeloggenie-action.yml
+
+Trigger: push on main
+
+Run ID: 29020177619
+
+Commit tested: 082ff8ac5f156ea4d13e5b99556d9e9da4874a2d
+
+Action reference tested: Ubuntu-123/changeloggenie-prototype@main
+
+Repository tested: Ubuntu-123/changeloggenie-prototype
+
+Requested date range: 2026-07-02 to 2026-07-09
+
+Result: success
+
+Artifact: changelog-action-output
+
+Artifact ID: 8199011962
+
+## Main branch validation verified behavior
+
+The main branch Action successfully generated a technical Markdown changelog after the categorization updates.
+
+The generated changelog included the expected heading, requested date range, commit date range, repository link, total commit count, and categorized commit sections.
+
+The generated changelog included 33 commits and did not include an Other section for the repository/date range tested.
+
+The Action was resolved from Ubuntu-123/changeloggenie-prototype@main at commit 082ff8ac5f156ea4d13e5b99556d9e9da4874a2d.
+
+The workflow used read-only repository permissions.
+
+The generated changelog was uploaded as the changelog-action-output artifact.
+
+The Action did not call OpenAI.
+
+The Action did not commit files back to the repository.
+
+The Action did not open a pull request.
+
+Note: run 29018711052 from the same validation sequence is not used as validation evidence because GitHub Actions did not acquire a hosted runner for that job.
