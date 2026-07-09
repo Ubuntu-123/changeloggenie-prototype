@@ -23,6 +23,15 @@ on:
         description: Optional changelog version label
         required: false
         default: "main-action-validation"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/test-changeloggenie-action.yml"
+      - "action.yml"
+      - "changelog_genie.py"
+      - "pyproject.toml"
+      - "requirements.txt"
 
 permissions:
   contents: read
@@ -35,11 +44,11 @@ jobs:
       - name: Generate changelog with ChangelogGenie
         uses: Ubuntu-123/changeloggenie-prototype@main
         with:
-          owner: ${{ inputs.owner }}
-          repo: ${{ inputs.repo }}
-          start_date: ${{ inputs.start_date }}
-          end_date: ${{ inputs.end_date }}
-          version: ${{ inputs.version }}
+          owner: ${{ github.event.inputs.owner || 'Ubuntu-123' }}
+          repo: ${{ github.event.inputs.repo || 'changeloggenie-prototype' }}
+          start_date: ${{ github.event.inputs.start_date || '2026-07-02' }}
+          end_date: ${{ github.event.inputs.end_date || '2026-07-09' }}
+          version: ${{ github.event.inputs.version || 'main-categorization-validation' }}
           output_path: changelog-action-output.md
           github_token: ${{ github.token }}
 
