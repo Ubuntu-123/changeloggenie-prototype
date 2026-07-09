@@ -81,6 +81,9 @@ class ChangelogGenie:
         "CI/CD": [
             r"^ci:",
             r"\bworkflow\b",
+            r"validate.*github action",
+            r"validate.*action.*main",
+            r"action validation",
             r"github-actions",
             r"actions versions",
             r"pre-commit",

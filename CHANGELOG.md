@@ -8,6 +8,7 @@ ChangelogGenie is a public read-only CLI and GitHub Action for generating techni
 
 ### Changed
 
+- Added categorization coverage for GitHub Action validation commits.
 - Added push-triggered validation for the GitHub Action workflow on main.
 - Added categorization coverage for test-related maintenance commits.
 - Added categorization coverage for refinement commits.

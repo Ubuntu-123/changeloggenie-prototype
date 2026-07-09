@@ -10,6 +10,7 @@ def test_categorizes_common_commit_messages():
         "Clarify requested and commit date ranges": "Improvements",
         "Refine commit categorization patterns": "Improvements",
         "ci: add ChangelogGenie demo workflow": "CI/CD",
+        "Validate GitHub Action from main": "CI/CD",
         "[pre-commit.ci] pre-commit autoupdate": "CI/CD",
         "release version 3.0.2": "Release Management",
         "Prepare v0.1.6 release": "Release Management",
