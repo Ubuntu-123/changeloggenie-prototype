@@ -178,7 +178,7 @@ The script validates that the model output is parseable JSON before printing the
    - **Release Management**: Versioning and publishing work
    - **Dependencies**: Dependency updates
    - **Refactoring**: Code restructuring
-   - **Maintenance**: Metadata, cleanup, and type-checking work
+   - **Maintenance**: Metadata, cleanup, test coverage, and type-checking work
    - **Breaking Changes**: API-incompatible changes
    - **Other**: Unclassified commits
 4. **Generate**: Produces a formatted Markdown changelog with links to commit details

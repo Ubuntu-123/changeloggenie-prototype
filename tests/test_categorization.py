@@ -17,6 +17,7 @@ def test_categorizes_common_commit_messages():
         "chore(deps): update requests": "Dependencies",
         "address mypy strict findings": "Maintenance",
         "Add Python package metadata": "Maintenance",
+        "Add categorization regression tests": "Maintenance",
         "Document v0.1.6 external Action validation": "Documentation",
         "Update roadmap for current Action state": "Documentation",
         "refactor: split parser helpers": "Refactoring",
