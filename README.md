@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate changelog
-        uses: Ubuntu-123/changeloggenie-prototype@v0.1.6
+        uses: Ubuntu-123/changeloggenie-prototype@v0.1.7
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
