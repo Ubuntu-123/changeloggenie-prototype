@@ -1,0 +1,41 @@
+name: Validate Outline v1.6.1
+
+on:
+  push:
+    branches:
+      - validation/outline-v1-6-1-20260805
+    paths:
+      - ".github/workflows/validate-outline-v1-6-1.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/validate-outline-v1-6-1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate technical changelog
+        uses: Ubuntu-123/changeloggenie-prototype@v0.1.7
+        with:
+          owner: outline
+          repo: outline
+          start_date: "2026-03-15"
+          end_date: "2026-03-18"
+          version: "Outline v1.6.1 validation"
+          output_path: "outline-v1.6.1-changelog.md"
+          github_token: ${{ github.token }}
+
+      - name: Show generated changelog
+        run: cat outline-v1.6.1-changelog.md
+
+      - name: Upload generated changelog
+        uses: actions/upload-artifact@v4
+        with:
+          name: outline-v1.6.1-changelog
+          path: outline-v1.6.1-changelog.md
