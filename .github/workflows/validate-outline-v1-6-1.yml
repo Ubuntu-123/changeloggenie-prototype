@@ -6,6 +6,11 @@ on:
       - validation/outline-v1-6-1-20260805
     paths:
       - ".github/workflows/validate-outline-v1-6-1.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/validate-outline-v1-6-1.yml"
   workflow_dispatch:
 
 permissions:
