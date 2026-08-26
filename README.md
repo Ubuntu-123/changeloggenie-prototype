@@ -54,33 +54,7 @@ ChangelogGenie currently has three usable layers:
 - GitHub Action for generating technical Markdown changelogs in repository workflows
 - optional local AI-assisted runner for transforming technical changelogs into customer-facing JSON, using the user's own OpenAI API key
 
-The GitHub Action does not call OpenAI, does not commit files, and does not open pull requests. It generates a Markdown artifact only.
-
-## Quick Start: GitHub Action
-
-Use the released Action from another repository:
-
-```yaml
-name: Generate changelog
-
-on:
-  workflow_dispatch:
-
-jobs:
-  changelog:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate changelog
-        uses: Ubuntu-123/changeloggenie-prototype@v0.1.7
-        with:
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          start_date: "2026-01-01"
-          end_date: "2026-12-31"
-          version: "draft"
-          output_path: "changelog-output.md"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-```
+The GitHub Action does not call OpenAI, does not commit files, and does not open pull requests. It generates a Markdown file only; it does not upload the file as a workflow artifact by itself.
 
 The Action accepts a date range, optional version label, output path, and optional `github_token`. It generates a Markdown file inside the workflow run only.
 
