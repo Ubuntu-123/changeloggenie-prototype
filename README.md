@@ -22,6 +22,8 @@ ChangelogGenie Free was validated against the public `outline/outline` repositor
 
 ChangelogGenie generates the Markdown file inside the GitHub Actions workflow; the example below uploads it as a workflow artifact for review or downstream processing.
 
+The Quick Start below targets the repository where the workflow runs; replace the date range as needed. It is separate from the outline/outline validation example above.
+
 ## Quick Start
 
 ```yaml
@@ -30,8 +32,8 @@ ChangelogGenie generates the Markdown file inside the GitHub Actions workflow; t
   with:
     owner: ${{ github.repository_owner }}
     repo: ${{ github.event.repository.name }}
-    start_date: "2026-03-15"
-    end_date: "2026-03-18"
+    start_date: "2026-08-01"
+    end_date: "2026-08-31"
     version: "draft"
     output_path: "changelog-output.md"
     github_token: ${{ secrets.GITHUB_TOKEN }}
