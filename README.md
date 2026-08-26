@@ -19,6 +19,7 @@ ChangelogGenie Free was validated against the public `outline/outline` repositor
 **Selected date range:** March 15–18, 2026  
 **Commits collected:** 21  
 **Output:** deterministic categorized Markdown changelog
+[View the actual generated Markdown output](examples/outline-v1.6.1-changelog.md)
 
 ChangelogGenie generates the Markdown file inside the GitHub Actions workflow; the example below uploads it as a workflow artifact for review or downstream processing.
 
