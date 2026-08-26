@@ -20,7 +20,7 @@ ChangelogGenie Free was validated against the public `outline/outline` repositor
 **Commits collected:** 21  
 **Output:** deterministic categorized Markdown changelog
 
-The Action runs entirely inside the GitHub Actions workflow and produces a Markdown artifact for review or downstream processing.
+ChangelogGenie generates the Markdown file inside the GitHub Actions workflow; the example below uploads it as a workflow artifact for review or downstream processing.
 
 ## Quick Start
 
@@ -35,6 +35,12 @@ The Action runs entirely inside the GitHub Actions workflow and produces a Markd
     version: "draft"
     output_path: "changelog-output.md"
     github_token: ${{ secrets.GITHUB_TOKEN }}
+
+- name: Upload changelog artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: changelog-output
+    path: changelog-output.md
 ```
 
 ## Current Product Shape
