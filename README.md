@@ -35,6 +35,7 @@ The Action runs entirely inside the GitHub Actions workflow and produces a Markd
     version: "draft"
     output_path: "changelog-output.md"
     github_token: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ## Current Product Shape
 
