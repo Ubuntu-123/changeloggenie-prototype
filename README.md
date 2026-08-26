@@ -2,13 +2,49 @@
 
 [![Test ChangelogGenie Action](https://github.com/Ubuntu-123/changeloggenie-prototype/actions/workflows/test-changeloggenie-action.yml/badge.svg)](https://github.com/Ubuntu-123/changeloggenie-prototype/actions/workflows/test-changeloggenie-action.yml)
 
-A lightweight read-only CLI and GitHub Action for generating categorized technical Markdown changelog drafts from GitHub commits.
+Generate a deterministic technical Markdown changelog directly from GitHub commits.
 
-## Overview
+ChangelogGenie is a lightweight, read-only GitHub Action and CLI that:
 
-ChangelogGenie reads commits from a given GitHub repository and date range, then outputs a structured Markdown changelog automatically categorized by commit type (features, bug fixes, performance improvements, etc.).
+- works with ordinary Git commit history — no Conventional Commits required;
+- automatically categorizes commits into features, fixes, performance, documentation, maintenance, and other technical categories;
+- accepts an explicit calendar date range;
+- preserves commit metadata and links to the source commits;
+- does not modify the repository, create commits, or open pull requests.
 
-ChangelogGenie also includes an experimental AI-assisted business changelog layer. This layer uses prompt instructions and examples to transform a technical changelog into concise customer-facing JSON output. It can be tested manually with the prompt files or run through the included OpenAI API runner.
+## Real output example
+
+ChangelogGenie Free was validated against the public `outline/outline` repository.
+
+**Selected date range:** March 15–18, 2026  
+**Commits collected:** 21  
+**Output:** deterministic categorized Markdown changelog
+[View the actual generated Markdown output](examples/outline-v1.6.1-changelog.md)
+
+ChangelogGenie generates the Markdown file inside the GitHub Actions workflow; the example below uploads it as a workflow artifact for review or downstream processing.
+
+The Quick Start below targets the repository where the workflow runs; replace the date range as needed. It is separate from the outline/outline validation example above.
+
+## Quick Start
+
+```yaml
+- name: Generate changelog
+  uses: Ubuntu-123/changeloggenie-prototype@v0.1.7
+  with:
+    owner: ${{ github.repository_owner }}
+    repo: ${{ github.event.repository.name }}
+    start_date: "2026-08-01"
+    end_date: "2026-08-31"
+    version: "draft"
+    output_path: "changelog-output.md"
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+
+- name: Upload changelog artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: changelog-output
+    path: changelog-output.md
+```
 
 ## Current Product Shape
 
